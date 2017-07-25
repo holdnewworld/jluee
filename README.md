@@ -28,13 +28,13 @@
 暂无
 
 ## 安装 ##
-
+    wget -N --no-check-certificate https://raw.githubusercontent.com/labrador0115/jluee/master/install.sh && bash install.sh
 
 ## 卸载 ##
-    wget -N --no-check-certificate  && bash uninstall.sh
+    wget -N --no-check-certificate https://raw.githubusercontent.com/labrador0115/jluee/master/uninstall.sh && bash uninstall.sh
     
 ## 自检 ##
-    wget -N --no-check-certificate https://raw.githubusercontent.com/FunctionClub/SSR-Bash-Python/master/self-check.sh && bash self-check.sh
+    wget -N --no-check-certificate https://raw.githubusercontent.com/labrador0115/jluee/master/self-check.sh && bash self-check.sh
 
 ## 参考资料 ##
 [ShadowsocksR](https://github.com/FunctionClub/shadowsocksr)
