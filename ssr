@@ -44,5 +44,7 @@ fi
 
 if [[ $choice == 7 ]];then
 	cp /usr/local/jluee/usergenerate.py /usr/local/shadowsocksr
+	cd /usr/local/shadowsocksr
 	python /usr/local/shadowsocksr/usergenerate.py
+	cd /root
 fi
