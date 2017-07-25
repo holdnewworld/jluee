@@ -60,8 +60,8 @@ fi
 
 #Install SSR and SSR-Bash
 cd /usr/local
-git clone https://github.com/shadowsocksr/shadowsocksr.git
 git clone https://github.com/labrador0115/jluee.git
+cp -r /usr/local/jluee/shadowsocksr /usr/local/shadowsocksr
 cd /usr/local/shadowsocksr
 bash initcfg.sh
 
