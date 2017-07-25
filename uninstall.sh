@@ -9,5 +9,8 @@ bash /usr/local/shadowsocksr/stop.sh
 
 #Delete Files
 rm -rf /usr/local/jluee
+echo 'rm -rf /usr/local/jluee'
 rm -rf /usr/local/shadowsocksr
+echo 'rm -rf /usr/local/shadowsocksr'
 rm -rf /usr/local/bin/ssr
+echo 'rm -rf /usr/local/bin/ssr'
