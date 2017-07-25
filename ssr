@@ -15,7 +15,7 @@ echo "7.生成20个用户"
 
 while :; do echo
 	read -p "请选择： " choice
-	if [[ ! $choice =~ ^[1-5]$ ]]; then
+	if [[ ! $choice =~ ^[1-7]$ ]]; then
 		echo "输入错误! 请输入正确的数字!"
 	else
 		break	
