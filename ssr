@@ -36,5 +36,5 @@ if [[ $choice == 4 ]];then
 fi
 
 if [[ $choice == 5 ]];then
-	bash /usr/local/SSR-Bash-Python/self-check.sh
+	bash /usr/local/jluee/self-check.sh
 fi
