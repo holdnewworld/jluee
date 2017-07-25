@@ -52,7 +52,7 @@ def main():
 	for i in p.stdout.readlines():
 		print i
 		Message.append(i)
-	with open('a.txt','a') as f:
+	with open('a.txt','a+') as f:
 		f.write(str(user))
 		f.write('\t')
 		f.write(str(port))
