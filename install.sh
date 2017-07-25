@@ -37,38 +37,38 @@ workdir=$(pwd)
 
 #Install Basic Tools
 if [[ ${OS} == Ubuntu ]];then
-	apt-get update
-	apt-get install python -y
-	apt-get install python-pip -y
-	apt-get install git -y
-	apt-get install language-pack-zh-hans -y
+    apt-get update
+    apt-get install python -y
+    apt-get install python-pip -y
+    apt-get install git -y
+    apt-get install language-pack-zh-hans -y
     apt-get install build-essential screen curl -y
 fi
 if [[ ${OS} == CentOS ]];then
-	yum install python screen curl -y
-	yum install python-setuptools -y && easy_install pip -y
-	yum install git -y
+    yum install python screen curl -y
+    yum install python-setuptools -y && easy_install pip -y
+    yum install git -y
     yum groupinstall "Development Tools" -y
 fi
 if [[ ${OS} == Debian ]];then
-	apt-get update
-	apt-get install python screen curl -y
-	apt-get install python-pip -y
-	apt-get install git -y
+    apt-get update
+    apt-get install python screen curl -y
+    apt-get install python-pip -y
+    apt-get install git -y
     apt-get install build-essential -y
 fi
 
 #Install SSR and SSR-Bash
 cd /usr/local
 git clone https://github.com/shadowsocksr/shadowsocksr.git
-git clone https://github.com/FunctionClub/SSR-Bash-Python.git
+git clone https://github.com/labrador0115/jluee.git
 cd /usr/local/shadowsocksr
 bash initcfg.sh
 
 
 #Start when boot
 if [[ ${OS} == Ubuntu || ${OS} == Debian ]];then
-    cat >/etc/init.d/ssr-bash-python <<EOF
+    cat >/etc/init.d/jluee <<EOF
 #!/bin/sh
 ### BEGIN INIT INFO
 # Provides:          SSR-Bash_python
@@ -84,19 +84,19 @@ if [[ ${OS} == Ubuntu || ${OS} == Debian ]];then
 iptables-restore < /etc/iptables.up.rules
 bash /usr/local/shadowsocksr/logrun.sh
 EOF
-    chmod 755 /etc/init.d/ssr-bash-python
-    chmod +x /etc/init.d/ssr-bash-python
+    chmod 755 /etc/init.d/jluee
+    chmod +x /etc/init.d/jluee
     cd /etc/init.d
-    update-rc.d ssr-bash-python defaults 95
+    update-rc.d jluee defaults 95
 fi
 
 if [[ ${OS} == CentOS ]];then
     echo "
 iptables-restore < /etc/iptables.up.rules
 bash /usr/local/shadowsocksr/logrun.sh
-" > /etc/rc.d/init.d/ssr-bash-python
-    chmod +x  /etc/rc.d/init.d/ssr-bash-python
-    echo "/etc/rc.d/init.d/ssr-bash-python" >> /etc/rc.d/rc.local
+" > /etc/rc.d/init.d/jluee
+    chmod +x  /etc/rc.d/init.d/jluee
+    echo "/etc/rc.d/init.d/jluee" >> /etc/rc.d/rc.local
     chmod +x /etc/rc.d/rc.local
 fi
 
@@ -129,7 +129,7 @@ systemctl enable iptables.service
 fi
 
 #Install SSR-Bash Background
-wget -N --no-check-certificate -O /usr/local/bin/ssr https://raw.githubusercontent.com/FunctionClub/SSR-Bash-Python/master/ssr
+wget -N --no-check-certificate -O /usr/local/bin/ssr https://raw.githubusercontent.com/labrador0115/jluee/master/ssr
 chmod +x /usr/local/bin/ssr
 
 #Modify ShadowsocksR API
