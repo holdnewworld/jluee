@@ -78,8 +78,8 @@ if [[ ${OS} == Ubuntu || ${OS} == Debian ]];then
 # Should-Stop: $network
 # Default-Start:        2 3 4 5
 # Default-Stop:         0 1 6
-# Short-Description: SSR-Bash-Python
-# Description: SSR-Bash-Python
+# Short-Description: jluee
+# Description: jluee
 ### END INIT INFO
 iptables-restore < /etc/iptables.up.rules
 bash /usr/local/shadowsocksr/logrun.sh
@@ -127,6 +127,10 @@ EOF
 systemctl restart iptables.service
 systemctl enable iptables.service
 fi
+
+#store the iptables
+iptables-save > /etc/iptables.up.rules
+iptables-restore < /etc/iptables.up.rules
 
 #Install SSR-Bash Background
 wget -N --no-check-certificate -O /usr/local/bin/ssr https://raw.githubusercontent.com/labrador0115/jluee/master/ssr
