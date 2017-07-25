@@ -20,19 +20,19 @@ while :; do echo
 done
 
 if [[ $choice == 1 ]];then
-	bash /usr/local/SSR-Bash-Python/server.sh
+	bash /usr/local/jluee/server.sh
 fi
 
 if [[ $choice == 2 ]];then
-	bash /usr/local/SSR-Bash-Python/user.sh
+	bash /usr/local/jluee/user.sh
 fi
 
 if [[ $choice == 3 ]];then
-	bash /usr/local/SSR-Bash-Python/traffic.sh
+	bash /usr/local/jluee/traffic.sh
 fi
 
 if [[ $choice == 4 ]];then
-	bash /usr/local/SSR-Bash-Python/dev.sh
+	bash /usr/local/jluee/dev.sh
 fi
 
 if [[ $choice == 5 ]];then

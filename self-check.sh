@@ -8,9 +8,9 @@ echo "##################################
 echo "############Filelist of /usr/local" >> /root/report.json
 cd /usr/local
 ls >> /root/report.json
-#List /usr/local/ssr-bash-python
-echo "############Filelist of /usr/local/SSR-Bash-Python" >> /root/report.json
-cd /usr/local/SSR-Bash-Python
+#List /usr/local/jluee
+echo "############Filelist of /usr/local/jluee" >> /root/report.json
+cd /usr/local/jluee
 ls >> /root/report.json
 #List /usr/local/shadowsockr
 echo "############Filelist of /usr/local/shadowsockr" >> /root/report.json
@@ -19,12 +19,12 @@ ls >> /root/report.json
 echo "############File test">>/root/report.json
 #Check File Exist
 if [ ! -f "/usr/local/bin/ssr" ]; then
-  echo "SSR-Bash-Python主文件缺失，请确认服务器是否成功连接至Github"
+  echo "jluee主文件缺失，请确认服务器是否成功连接至Github"
   echo "SSR Miss" >> /root/report.json
   exit
 fi
-if [ ! -f "/usr/local/SSR-Bash-Python/server.sh" ]; then
-  echo "SSR-Bash-Python主文件缺失，请确认服务器是否成功连接至Github"
+if [ ! -f "/usr/local/jluee/server.sh" ]; then
+  echo "jluee主文件缺失，请确认服务器是否成功连接至Github"
   echo "SSR Miss" >> /root/report.json
   exit
 fi

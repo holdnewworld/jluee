@@ -59,14 +59,14 @@ if [[ $serverc == 1 ]];then
 	clear
 	echo "ShadowsocksR服务器已启动"
 	echo ""
-	bash /usr/local/SSR-Bash-Python/server.sh
+	bash /usr/local/jluee/server.sh
 fi
 
 if [[ $serverc == 2 ]];then
 	bash /usr/local/shadowsocksr/stop.sh
 	echo "ShadowsocksR服务器已停止"
 	echo ""
-	bash /usr/local/SSR-Bash-Python/server.sh
+	bash /usr/local/jluee/server.sh
 fi
 
 if [[ $serverc == 3 ]];then
@@ -76,7 +76,7 @@ if [[ $serverc == 3 ]];then
 	clear
 	echo "ShadowsocksR服务器已重启"
 	echo ""
-	bash /usr/local/SSR-Bash-Python/server.sh
+	bash /usr/local/jluee/server.sh
 fi
 
 if [[ $serverc == 4 ]];then
@@ -85,7 +85,7 @@ fi
 
 if [[ $serverc == 5 ]];then
 	ps aux|grep server.py
-	bash /usr/local/SSR-Bash-Python/server.sh
+	bash /usr/local/jluee/server.sh
 fi
 
 if [[ $serverc == 6 ]];then
@@ -95,7 +95,7 @@ if [[ $serverc == 6 ]];then
 	echo "nameserver $ifdns2" >> /etc/resolv.conf
 	echo "DNS 服务器已设置为  $ifdns1 $ifdns2"
 	echo ""
-	bash /usr/local/SSR-Bash-Python/server.sh
+	bash /usr/local/jluee/server.sh
 fi
 
 if [[ $serverc == 7 ]];then
@@ -132,11 +132,11 @@ if [[ $serverc == 7 ]];then
 	#Get IP
 	ip=`curl -m 10 -s http://members.3322.org/dyndns/getip`
 	clear
-	cd /usr/local/SSR-Bash-Python/www
+	cd /usr/local/jluee/www
 	screen -dmS webcgi python -m CGIHTTPServer $cgiport
 	echo "WEB服务启动成功，请访问 http://${ip}:$cgiport"
 	echo ""
-	bash /usr/local/SSR-Bash-Python/server.sh
+	bash /usr/local/jluee/server.sh
 fi
 
 if [[ $serverc == 8 ]];then
@@ -146,12 +146,12 @@ if [[ $serverc == 8 ]];then
 	clear
 	echo "WEB服务已关闭！"
 	echo ""
-	bash /usr/local/SSR-Bash-Python/server.sh
+	bash /usr/local/jluee/server.sh
 fi
 
 if [[ $serverc == 9 ]];then
 	if [[ ${OS} == Ubuntu || ${OS} == Debian ]];then
-    	cat >/etc/init.d/ssr-bash-python <<EOF
+    	cat >/etc/init.d/jluee <<EOF
 #!/bin/sh
 ### BEGIN INIT INFO
 # Provides:          SSR-Bash_python
@@ -167,23 +167,23 @@ if [[ $serverc == 9 ]];then
 iptables-restore < /etc/iptables.up.rules
 bash /usr/local/shadowsocksr/logrun.sh
 EOF
-    	chmod 755 /etc/init.d/ssr-bash-python
-    	chmod +x /etc/init.d/ssr-bash-python
+    	chmod 755 /etc/init.d/jluee
+    	chmod +x /etc/init.d/jluee
     	cd /etc/init.d
-    	update-rc.d ssr-bash-python defaults 95
+    	update-rc.d jluee defaults 95
 	fi
 
 	if [[ ${OS} == CentOS ]];then
     	echo "
 iptables-restore < /etc/iptables.up.rules
 bash /usr/local/shadowsocksr/logrun.sh
-" > /etc/rc.d/init.d/ssr-bash-python
-    	chmod +x  /etc/rc.d/init.d/ssr-bash-python
-    	echo "/etc/rc.d/init.d/ssr-bash-python" >> /etc/rc.d/rc.local
+" > /etc/rc.d/init.d/jluee
+    	chmod +x  /etc/rc.d/init.d/jluee
+    	echo "/etc/rc.d/init.d/jluee" >> /etc/rc.d/rc.local
     	chmod +x /etc/rc.d/rc.local
 	fi
 	echo "开机启动设置完成！"
         echo ""
-	bash /usr/local/SSR-Bash-Python/server.sh
+	bash /usr/local/jluee/server.sh
 fi
 
