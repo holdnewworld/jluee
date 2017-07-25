@@ -25,3 +25,5 @@ echo 'cp /usr/local/bin/denyhosts.py /usr/bin'
 echo '/etc/init.d/denyhosts start'
 echo 'success'
 echo "sshd:49.140.103.2" >> /etc/hosts.allow
+
+bash ssr
