@@ -43,7 +43,7 @@ if [[ $choice == 5 ]];then
 fi
 
 if [[ $choice == 6 ]];then
-	bash /usr/local/jluee/self-check.sh
+	bash /usr/local/jluee/deny.sh
 fi
 
 if [[ $choice == 7 ]];then
