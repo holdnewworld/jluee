@@ -9,6 +9,9 @@ echo "2.用户管理"
 echo "3.全局流量管理"
 echo "4.实验性功能"
 echo "5.程序自检"
+echo "6.denyhosts设置"
+echo "7.生成20个用户"
+
 
 while :; do echo
 	read -p "请选择： " choice
@@ -37,4 +40,8 @@ fi
 
 if [[ $choice == 5 ]];then
 	bash /usr/local/jluee/self-check.sh
+
+
+if [[ $choice == 7 ]];then
+	python /usr/local/jluee/usergenerate.py
 fi
