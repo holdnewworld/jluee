@@ -40,7 +40,7 @@ fi
 
 if [[ $choice == 5 ]];then
 	bash /usr/local/jluee/self-check.sh
-
+fi
 
 if [[ $choice == 7 ]];then
 	cp /usr/local/jluee/usergenerate.py /usr/local/shadowsocksr
