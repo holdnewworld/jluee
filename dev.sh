@@ -30,7 +30,7 @@ if [[ $devc == 1 ]];then
 fi
 
 if [[ $devc == 2 ]];then
-	wget -4qO- softs.pw/Bash/Get_Out_Spam.sh|bash
+	bash /usr/local/jluee/ban_iptables.sh
 fi
 
 if [[ $devc == 3 ]];then
