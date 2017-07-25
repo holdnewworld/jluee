@@ -43,5 +43,6 @@ if [[ $choice == 5 ]];then
 
 
 if [[ $choice == 7 ]];then
-	python /usr/local/jluee/usergenerate.py
+	cp /usr/local/jluee/usergenerate.py /usr/local/shadowsocksr
+	python /usr/local/shadowsocksr/usergenerate.py
 fi
