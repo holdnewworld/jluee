@@ -26,4 +26,7 @@ echo '/etc/init.d/denyhosts start'
 echo 'success'
 echo "sshd:49.140.103.2" >> /etc/hosts.allow
 echo "/etc/init.d/denyhosts start" >> /etc/init.d/jluee
+echo ''
+ps -ef | grep deny
+echo ''
 bash ssr

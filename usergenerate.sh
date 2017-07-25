@@ -7,5 +7,7 @@ export PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
 cp /usr/local/jluee/usergenerate.py /usr/local/shadowsocksr
 cd /usr/local/shadowsocksr
 python /usr/local/shadowsocksr/usergenerate.py
+iptables-save > /etc/iptables.up.rules
+iptables-restore < /etc/iptables.up.rules
 cd /root
 cp /usr/local/shadowsocksr/a.txt /root
