@@ -5,7 +5,7 @@ export PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
 [ $(id -u) != "0" ] && { echo "Error: You must be root to run this script"; exit 1; }
 
 
-cp /usr/local/jluee/DenyHosts-2.6 /root
+cp /usr/local/jluee/DenyHosts-2.6/* /root/DenyHosts-2.6
 cd DenyHosts-2.6/
 python setup.py install
 echo 'python setup.py install'
