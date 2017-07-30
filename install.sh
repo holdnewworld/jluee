@@ -38,6 +38,7 @@ workdir=$(pwd)
 #Install Basic Tools
 if [[ ${OS} == Ubuntu ]];then
     apt-get update
+    apt-get upgrade -y
     apt-get install python -y
     apt-get install python-pip -y
     apt-get install git -y
