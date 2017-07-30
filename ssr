@@ -12,10 +12,11 @@ echo "5.程序自检"
 echo "6.denyhosts设置"
 echo "7.生成20个用户"
 echo "8.设置服务器在每天凌晨2点重启"
+echo "9.安装bbr"
 
 while :; do echo
 	read -p "请选择： " choice
-	if [[ ! $choice =~ ^[1-8]$ ]]; then
+	if [[ ! $choice =~ ^[1-9]$ ]]; then
 		echo "输入错误! 请输入正确的数字!"
 	else
 		break	
@@ -52,4 +53,8 @@ fi
 
 if [[ $choice == 8 ]];then
 	bash /usr/local/jluee/autoreboot.sh
+fi
+
+if [[ $choice == 9 ]];then
+	bash /usr/local/jluee/bbr.sh
 fi
