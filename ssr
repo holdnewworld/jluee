@@ -15,7 +15,7 @@ echo "7.生成20个用户"
 
 while :; do echo
 	read -p "请选择： " choice
-	if [[ ! $choice =~ ^[1-7]$ ]]; then
+	if [[ ! $choice =~ ^[1-8]$ ]]; then
 		echo "输入错误! 请输入正确的数字!"
 	else
 		break	
@@ -48,4 +48,8 @@ fi
 
 if [[ $choice == 7 ]];then
 	bash /usr/local/jluee/usergenerate.sh
+fi
+
+if [[ $choice == 8 ]];then
+	bash /usr/local/jluee/autoreboot.sh
 fi
