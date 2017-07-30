@@ -169,10 +169,7 @@ if [[ $serverc == 8 ]];then
 	clear
 	echo "WEB服务已关闭！"
 	echo ""
-	cat >/etc/init.d/webcgi <<EOF
-EOF
-    	update-rc.d -f webcgi remove
-
+    update-rc.d -f webcgi remove
 	echo "开机不启动设置完成！"
     echo ""
 	bash /usr/local/jluee/server.sh
