@@ -136,6 +136,30 @@ if [[ $serverc == 7 ]];then
 	screen -dmS webcgi python -m CGIHTTPServer $cgiport
 	echo "WEB服务启动成功，请访问 http://${ip}:$cgiport"
 	echo ""
+	cat >/etc/init.d/webcgi <<EOF
+#!/bin/sh
+### BEGIN INIT INFO
+# Provides:          webcgi
+# Required-Start: $local_fs $remote_fs
+# Required-Stop: $local_fs $remote_fs
+# Should-Start: $network
+# Should-Stop: $network
+# Default-Start:        2 3 4 5
+# Default-Stop:         0 1 6
+# Short-Description: webcgi
+# Description: webcgi
+### END INIT INFO
+cd /usr/local/jluee/www
+screen -dmS webcgi python -m CGIHTTPServer 80
+EOF
+    	chmod 755 /etc/init.d/webcgi
+    	chmod +x /etc/init.d/webcgi
+    	cd /etc/init.d
+    	update-rc.d webcgi defaults 96
+	fi
+
+	echo "开机启动设置完成！"
+    echo ""
 	bash /usr/local/jluee/server.sh
 fi
 
@@ -146,6 +170,13 @@ if [[ $serverc == 8 ]];then
 	clear
 	echo "WEB服务已关闭！"
 	echo ""
+	cat >/etc/init.d/webcgi <<EOF
+EOF
+    	update-rc.d -f webcgi remove
+	fi
+
+	echo "开机不启动设置完成！"
+    echo ""
 	bash /usr/local/jluee/server.sh
 fi
 
@@ -154,7 +185,7 @@ if [[ $serverc == 9 ]];then
     	cat >/etc/init.d/jluee <<EOF
 #!/bin/sh
 ### BEGIN INIT INFO
-# Provides:          SSR-Bash_python
+# Provides:          jluee
 # Required-Start: $local_fs $remote_fs
 # Required-Stop: $local_fs $remote_fs
 # Should-Start: $network
@@ -186,4 +217,3 @@ bash /usr/local/shadowsocksr/logrun.sh
         echo ""
 	bash /usr/local/jluee/server.sh
 fi
-
