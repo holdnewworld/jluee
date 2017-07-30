@@ -10,7 +10,7 @@ echo '切换时区为shanghai'
 echo ''
 
 #add autoreboot at 02:00 everyday
-echo '07 13  * * * root /sbin/reboot'
+echo '12 13  * * * root /sbin/reboot' >> /etc/crontab
 service cron restart
 echo "设置服务器在每天凌晨2点重启"
 echo ''
