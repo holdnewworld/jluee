@@ -156,7 +156,6 @@ EOF
     	chmod +x /etc/init.d/webcgi
     	cd /etc/init.d
     	update-rc.d webcgi defaults 96
-	fi
 
 	echo "开机启动设置完成！"
     echo ""
@@ -173,7 +172,6 @@ if [[ $serverc == 8 ]];then
 	cat >/etc/init.d/webcgi <<EOF
 EOF
     	update-rc.d -f webcgi remove
-	fi
 
 	echo "开机不启动设置完成！"
     echo ""
