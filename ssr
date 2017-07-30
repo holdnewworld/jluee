@@ -11,7 +11,7 @@ echo "4.实验性功能"
 echo "5.程序自检"
 echo "6.denyhosts设置"
 echo "7.生成20个用户"
-
+echo "8.设置服务器在每天凌晨2点重启"
 
 while :; do echo
 	read -p "请选择： " choice
