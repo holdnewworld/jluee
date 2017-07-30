@@ -37,6 +37,7 @@ workdir=$(pwd)
 
 #Install Basic Tools
 if [[ ${OS} == Ubuntu ]];then
+    sudo dpkg --configure -a  
     apt-get update
     apt-get upgrade -y
     apt-get install python -y
