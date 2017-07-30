@@ -19,7 +19,7 @@ def main():
 	Message = []
 	user ,port, passwd = GenPasswd()
 	print user, port, passwd
-	cmd = 'python mujson_mgr.py -a -u ' + str(user) + ' -p ' + str(port) + ' -k ' + str(passwd) + ' -m rc4-md5 -O origin -o http_simple -t 50'
+	cmd = 'python mujson_mgr.py -a -u ' + str(user) + ' -p ' + str(port) + ' -k ' + str(passwd) + ' -m rc4-md5 -O origin -o http_simple -t 50 -S 2500'
 	print cmd
 	p = subprocess.Popen(cmd, stdout=subprocess.PIPE,shell=True)
 	
